@@ -1,11 +1,10 @@
- 
 
 
 
 
 
  /// @desc Debug UI
-draw_set_font(-1);		 // (Font)  Change
+ draw_set_font(-1);		 // (Font)  Change
 draw_set_color(c_white); // (Color) Change
 
 // Turn "TRUE" To "FALSE" If you don't wanna see debug UI even if the debug mode is (On)
