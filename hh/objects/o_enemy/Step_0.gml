@@ -1,8 +1,5 @@
- _left = keyboard_check(ord("A"))
-_right = keyboard_check(ord("D"))
-_jump = keyboard_check(ord("W")) 
 
-move = _right - _left 
+
 
 hsp = lerp(hsp, sp * move ,0.05)
 
@@ -15,16 +12,10 @@ if place_meeting(x+hsp,y,oWall)
 	{
 	x+=sign(hsp)	
 	}
-hsp= 0	
+	hsp = 0
+move = -move
 }
 
-
-
-if (_jump && place_meeting(x,y+1,oWall))
-{
-vsp = -jsp	
-
-}
 
 
 
@@ -47,7 +38,7 @@ y+=vsp
   
   if !place_meeting(x,y+1,oWall)
    {
-	sprite_index = sJump
+	sprite_index = sEnemyA
 	image_speed = 0
 	if (sign(vsp) > 0)  
 	{ image_index = 1}
@@ -58,11 +49,11 @@ y+=vsp
 	image_speed = 1
 	if hsp==0 || move==0
 	{
-sprite_index = sPlayer	
+sprite_index = sEnemy	
 	}
 	else
 	{
-	sprite_index = sRun	
+	sprite_index = sEnemyR	
 	
 	}
  }
