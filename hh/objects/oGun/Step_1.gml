@@ -7,15 +7,16 @@ if delay > -1
 delay -=1   
 }
 recoil = max(0,recoil-1)
-show_debug_message(delay)
+
 if (mouse_check_button(mb_left)) && (delay <0)
  {
+	 audio_play_sound(shoot,5,0)
 	 recoil = 4
-	 delay = 10
+	 delay = 5
 	with instance_create_layer(x,y,"bullets",oBullet)	
 	{ 
 		speed = 25
-		direction = other.image_angle
+		direction = other.image_angle + random_range(-5,5)
 		image_angle = direction
 	}
 
